@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+:root {
+    --primary-color-rgb: 226, 22, 192; 
+    --background-color: #131316;
+    --text-color: #ffffff;
+    --link-color: rgb(32, 27, 27);
+    --button-color: #888dce; 
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 2.2vh;
+    min-height: 50vh;
+}
+
+.btn {
+    padding: 8px 16px;
+    background-color: #CD2096;
+    color: #fff;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: #ffffff;
+    background-color: rgb(119, 12, 12) ;
+    box-shadow: 0 0 35px rgb(119, 12, 12);
+}
+
+@keyframes flames {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes fadeInTopBar {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.top-bar {
+    background-color: #151515;
+    color: var(--text-color);
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeInTopBar 1s ease-in-out forwards;
+}
+
+.brand {
+    font-size: 1.2rem;
+    margin-left: 20px;
+}
+
+.brand-initial {
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    margin-right: 20px;
+}
+
+.menu-item {
+    opacity: 100%;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3vh;
+    text-transform: uppercase;
+    border-radius: 22vh;
+    transition: 0.8s;
+}
+
+.menu-item:hover {
+    color: #ffffff;
+    background-color: rgb(119, 12, 12) ;
+    box-shadow: 0 0 35px rgb(119, 12, 12);
+}
+
+.intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.intro-text {
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: introAnimation 1s ease-in-out forwards;
+}
+
+@keyframes introAnimation {
+    0%, 10% {
+        opacity: 0;
+        filter: blur(5%);
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1; 
+        filter: blur(0%);
+        transform: translateY(0);
+    }
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(1px);
+    transition: all 2s ease;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
+
+a {
+    background: rgba(var(--primary-color-rgb), 0.2);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 2vh;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.8s;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+a:hover {
+    letter-spacing: 0.15em;
+    background: var(--clr);
+    box-shadow: 0 0 35px var(--clr);
+}
+
+.welcome-section,
+.free-version-section,
+.reasons-section,
+.contact-section {
+    text-align: center;
+    padding: 30px;
+}
+
+.centered-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888888;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+}
